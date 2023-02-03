@@ -1,0 +1,4 @@
+maintenanceOrder_ID;maintenanceOrderOperation;operationDescription
+1000441;0010;Standard overhauling task on pump/motor
+1000441;0020;Switch Board
+1000441;0030;Removal of Motor
