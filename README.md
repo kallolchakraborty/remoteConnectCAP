@@ -23,3 +23,5 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+1. `cf env remoteConnectCAP-srv > default-env.json` : to add default-env.json. After getting the file edit to the proper `json` format.

@@ -4,6 +4,7 @@ const sapcfaxios = require("sap-cf-axios").default;
 
 module.exports = cds.service.impl(async (srv) => {
 
+    /** function: getOrder */
     srv.on("getOrder", async (req) => {
 
         const axios = sapcfaxios("DST030");
@@ -11,7 +12,7 @@ module.exports = cds.service.impl(async (srv) => {
         /** the destination is having basic authentication */
         const response = await axios({
             method: "GET",
-            url: "/API_MAINTENANCEORDER/MaintenanceOrder?$expand=to_MaintenanceOrderOperation&$filter=MaintenanceOrder eq '1000441'",
+            url: "/API_MAINTENANCEORDER/MaintenanceOrder",
             params: {
                 $format: "json",
             },

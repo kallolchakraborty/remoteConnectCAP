@@ -1,7 +1,7 @@
 _schema-version: '3.1'
 ID: remoteConnectCAP
 version: 1.0.0
-description: "A simple CAP project."
+description: "Simple CAP project to access destination of type on-premise."
 parameters:
   enable-parallel-deployments: true
 build-parameters:
@@ -27,7 +27,6 @@ modules:
       - name: remoteConnectCAP-db
       - name: remoteConnectDestSrv
       - name: remoteConnectConnSrv
-      - name: remoteConnectUaa
 
   - name: remoteConnectCAP-db-deployer
     type: hdb
@@ -57,13 +56,3 @@ resources:
     parameters:
       service: connectivity
       service-plan: lite
-
-  - name: remoteConnectUaa
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: xsuaa
-      service-plan: application
-      path: ./xs-security.json
-      config:
-        xsappname: remoteConnectCAP-${org}-${space}
-        tenant-mode: dedicated
