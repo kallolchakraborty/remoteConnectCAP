@@ -25,7 +25,7 @@ module.exports = cds.service.impl(async (srv) => {
         return response.data.d.results;
     });
 
-    /** function: getOrder */
+    /** function: getOrderDiff */
     srv.on("getOrderDiff", async (req) => {
 
         /** the destination: MaintenanceOrderCPI is having OAuth2ClientCredentials authentication */
