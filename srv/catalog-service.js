@@ -4,7 +4,7 @@ const sapcfaxios = require("sap-cf-axios").default;
 
 module.exports = cds.service.impl(async (srv) => {
 
-    /** function: getOrder */
+    /** function: getOrderDiff */
     srv.on("getOrder", async (req) => {
 
         const axios = sapcfaxios("DST030");
