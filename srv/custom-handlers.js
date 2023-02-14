@@ -1,7 +1,7 @@
 const cds = require("@sap/cds");
 /** sap-cf-axios: to make calls via the destinations */
 const sapcfaxios = require("sap-cf-axios").default;
-var jsonDiff = require('json-diff');
+
 module.exports = cds.service.impl(async (srv) => {
 
     /** function: getOrderDiff */

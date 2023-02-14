@@ -1,0 +1,24 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "admin"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "level",
+      "description": "level",
+      "valueType": "s"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "admin",
+      "scope-references": [
+        "$XSAPPNAME.admin"
+      ],
+      "description": "generated"
+    }
+  ]
+}
