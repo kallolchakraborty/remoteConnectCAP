@@ -1,6 +1,11 @@
 namespace s4hOP.MO.db;
 
-entity MaintenanceOrder {
+/**
+ * aspects: url: <https://cap.cloud.sap/docs/cds/common#aspect-managed>
+ */
+using {managed} from '@sap/cds/common';
+
+entity MaintenanceOrder : managed {
         maintenanceOrderType      : String(4);
         maintenanceOrderDesc      : String(100);
         controllingArea           : String(4);
@@ -10,7 +15,7 @@ entity MaintenanceOrder {
                                         on maintenanceOrderOperation.maintenanceOrder = $self;
 }
 
-entity MaintenanceOrderOperation {
+entity MaintenanceOrderOperation : managed {
     key maintenanceOrderOperation : String(4);
         operationDescription      : String(100);
     key maintenanceOrder          : Association to one MaintenanceOrder;

@@ -2,15 +2,28 @@ using {s4hOP.MO.db as db} from '../db/schema';
 
 namespace s4hOP.MO.srv;
 
-service catalogService @(path : '/catalog') {
+/**
+ * setting path of the service & the custom handlers url: <https://cap.cloud.sap/docs/node.js/services#srv-impls>
+ */
 
-    entity MaintenanceOrder          as select * from db.MaintenanceOrder;
-    entity MaintenanceOrderOperation as select * from db.MaintenanceOrderOperation;
+service catalogService @(path : '/catalogService') @(impl : './custom-handlers.js') {
+
     /**
-     * function: getOrder(): to fetch Work Order from destination via Cloud Connector
-     * function: getOrderDiff(): to fetch the differences between S4H & BTP 
+     * control exposure of associations and compositions: hiding of
+     * the entities having associations
      */
-    function getOrder()     returns array of String;
-    function getOrderDiff() returns array of String;
+    annotate MaintenanceOrder with {
+        modifiedAt @odata.etag
+    }
+    entity MaintenanceOrder          as projection on db.MaintenanceOrder excluding {
+        maintenanceOrderOperation
+    };
+
+    entity MaintenanceOrderOperation as projection on db.MaintenanceOrderOperation;
+    /**
+     * functions:
+     */
+    function getOrder()        returns array of String;
+    function getOrderDiff()    returns array of String;
     function workOrderUpdate() returns array of String;
 }
