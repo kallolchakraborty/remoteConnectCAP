@@ -83,3 +83,9 @@ resources:
       config:
         xsappname: remoteConnectCAP
         tenant-mode: dedicated
+      # hardcoding if the approuter is not used
+      # role-collections:
+      # - name: "Administrator"
+      #   description: Administrative Access
+      #   role-template-references:
+      #     - $XSAPPNAME.admin
