@@ -12,4 +12,5 @@ service catalogService @(path : '/catalog') {
      */
     function getOrder()     returns array of String;
     function getOrderDiff() returns array of String;
+    function workOrderUpdate() returns array of String;
 }
