@@ -1,15 +1,17 @@
 {
   "name": "remoteConnectCAP",
   "version": "1.0.0",
-  "description":  "Simple CAP project to access destination of type on-premise.",
+  "description": "Simple CAP project to access destination of type on-premise.",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@sap/cds": "^6.5.0",
     "express": "^4",
-    "sap-cf-axios": "^0.4.8",
-    "hdb": "^0.19.0"
+    "hdb": "^0.19.0",
+    "json-diff": "^1.0.2",
+    "recursive-diff": "^1.0.8",
+    "sap-cf-axios": "^0.4.8"
   },
   "devDependencies": {
     "sqlite3": "^5.0.4"
