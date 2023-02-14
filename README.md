@@ -25,3 +25,11 @@ File or Folder | Purpose
 Learn more at https://cap.cloud.sap/docs/get-started/.
 
 1. `cf env remoteConnectCAP-srv > default-env.json` : to add default-env.json. After getting the file edit to the proper `json` format.
+2. To `add roles` if `approuter` is not used(hardcoding).
+    ```
+    role-collections: 
+    - name: 'Administrator'
+    description: Administrative Access
+    role-template-references:
+        - $XSAPPNAME.admin
+    ```

@@ -9,12 +9,16 @@ namespace s4hOP.MO.srv;
 service catalogService @(path : '/catalogService') @(impl : './custom-handlers.js') {
 
     /**
-     * control exposure of associations and compositions: hiding of
-     * the entities having associations
+     * <https://cap.cloud.sap/docs/guides/providing-services#etag>
      */
     annotate MaintenanceOrder with {
         modifiedAt @odata.etag
     }
+
+    /**
+     * control exposure of associations and compositions: hiding of
+     * the entities having associations
+     */
     entity MaintenanceOrder          as projection on db.MaintenanceOrder excluding {
         maintenanceOrderOperation
     };
